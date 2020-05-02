@@ -1,11 +1,12 @@
 source 'https://rubygems.org'
-ruby "2.1.2"
+ruby "2.5.5"
 
-gem 'rails', '4.2.4'
+gem 'rails'
 gem 'dotenv-rails'
 
-gem 'pg'
 gem 'rack-cors', :require => 'rack/cors'
+
+gem 'mysql2'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'

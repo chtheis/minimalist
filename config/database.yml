@@ -1,23 +1,26 @@
 development:
-  adapter: postgresql
+  adapter: mysql2
   encoding: utf8
-  database: minimalist/development
-  username: postgres
+  database: minimalist_development
+  username: <%= ENV["MINIMALIST_DATABASE_USER"] %>
+  password: <%= ENV["MINIMALIST_DATABASE_PASSWORD"] %>
   pool: 5
   timeout: 5000
 
 test:
-  adapter: postgresql
+  adapter: mysql2
   encoding: utf8
-  database: minimalist/test
-  username: postgres
+  database: minimalist_test
+  username: minimalist
+  password:
   pool: 5
   timeout: 5000
 
 production:
-  adapter: postgresql
+  adapter: mysql2
   encoding: utf8
-  database: db/production
-  username: postgres
+  database: minimalist
+  username: minimalist
+  password:
   pool: 5
   timeout: 5000

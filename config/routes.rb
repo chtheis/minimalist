@@ -33,6 +33,7 @@ Lists::Application.routes.draw do
     end
   end
 
+  get 'preview' => 'pages#preview'
   get 'dashboard' => 'pages#dashboard'
   get 'dashboard/*all', to: 'pages#dashboard'
 

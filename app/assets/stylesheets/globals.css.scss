@@ -46,6 +46,10 @@ button,
   float: right;
 }
 
+.hero {
+  background-color: #f6f6f6;
+}
+
 .show {
   opacity: 1;
   transition: opacity 200ms linear;
@@ -201,7 +205,8 @@ textarea {
   justify-content: center;
 }
 
-.pages-home {
+.pages-home,
+.pages-preview {
   .dots .dot {
     background: white;
   }

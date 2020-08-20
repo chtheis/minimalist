@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby "2.5.5"
+ruby "2.6.6"
 
 gem 'rails'
 gem 'dotenv-rails'
@@ -9,13 +9,13 @@ gem 'rack-cors', :require => 'rack/cors'
 gem 'mysql2'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
+gem 'sass-rails'
 
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
+gem 'uglifier'
 
 # Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
+gem 'coffee-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -25,7 +25,7 @@ gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 #gem 'jbuilder', '~> 1.2'
-gem 'active_model_serializers', '~> 0.8.3'
+gem 'active_model_serializers'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -45,16 +45,18 @@ gem 'puma'
 gem 'newrelic_rpm'
 
 # rails 4.2 removes support for respond_to/respond_with
-gem 'responders', '~> 2.0' 
+gem 'responders'
 
 gem 'rails_12factor', group: :production
 
-gem 'web-console', '~> 2.0', group: :development
+gem 'web-console', group: :development
 
 # add authentication
 gem 'devise'
 gem 'omniauth-google-oauth2'
 gem 'pundit'
+
+gem 'bootsnap', require: false
 
 gem 'autoprefixer-rails'
 

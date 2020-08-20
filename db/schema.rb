@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20151222164222) do
   enable_extension "uuid-ossp"
 
   create_table "identities", force: :cascade do |t|
-    t.integer  "user_id"
+    t.bigint   "user_id"
     t.string   "provider"
     t.string   "uid"
     t.datetime "created_at", null: false
@@ -32,14 +32,14 @@ ActiveRecord::Schema.define(version: 20151222164222) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "slug"
-    t.integer  "stack_id"
+    t.bigint   "stack_id"
     t.datetime "deleted_at"
-    t.integer  "owner_id"
+    t.bigint   "owner_id"
   end
 
   create_table "lists_users", id: false, force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "list_id", null: false
+    t.bigint  "user_id", null: false
+    t.bigint  "list_id", null: false
   end
 
   add_index "lists_users", ["list_id", "user_id"], name: "index_lists_users_on_list_id_and_user_id", unique: true, using: :btree
@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 20151222164222) do
     t.boolean  "completed",   default: false
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
-    t.integer  "list_id"
+    t.bigint   "list_id"
     t.integer  "sort_order"
     t.datetime "deleted_at"
   end

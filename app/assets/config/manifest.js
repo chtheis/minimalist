@@ -1,4 +1,4 @@
-//= link_tree ../javascripts
-//= link_tree ../images
-//= link_tree ../stylesheets
-//= link_tree ../templates
+//= link application.css
+//= link_tree ../javascripts .js
+//= link_tree ../images .png
+//= link_tree ../templates .jst

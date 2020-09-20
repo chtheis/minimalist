@@ -20,14 +20,14 @@ getApiPath = (path) ->
     return prefix + "/api"
   else
     # returns /s/:stack_id and drops everything after
-    return prefix + path.split("/").slice(0, offset + 3).join("/")
+    return path.split("/").slice(0, offset + 3).join("/")
 
 getRootPath = (path) ->
   prefix = if path.indexOf("/minimalist/") == 0 then "/minimalist" else ""
   offset = if path.indexOf("minimalist/") == 0 then 1 else 0
 
   parts = if path.indexOf(prefix + '/dashboard') == 0 then 2 else 3
-  return prefix + path.split("/").slice(0, offset + parts).join("/")
+  return path.split("/").slice(0, offset + parts).join("/")
 
 joinPaths = (pathA, pathB) ->
   aHasDivider = pathA[pathA.length - 1] == '/'

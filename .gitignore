@@ -22,3 +22,6 @@
 # Ignore public
 /public
 
+# Ignore node_modules
+/node_modules
+

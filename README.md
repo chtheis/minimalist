@@ -1,4 +1,5 @@
 # minimalist
 
-Home of [getminimalist.com](http://getminimalist.com), the simple, sharable  list app.
+An attempt to keep https://github.com/mshwery/minimalist alive. 
 
+Let it be a TODO list without having to give your data away.

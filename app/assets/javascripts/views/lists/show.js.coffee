@@ -102,10 +102,10 @@ class listApp.Views.ListsShow extends Backbone.View
 
   setUrl: =>
     prefix = if window.location.pathname.indexOf("/minimalist") == 0 then "/minimalist" else ""
-    offset = if window.location.pathname.indexOf("/minimalist") == 0 then 1 else 0
+    offset = if window.location.pathname.indexOf("/minimalist") == 0 then 2 else 1
 
     path = window.location.pathname.split("/").slice(offset + 0, -1).join("/")
-    newPath = [path, @model.get('id')].join("/")
+    newPath = ["/" + path, @model.get('id')].join("/")
     listApp.router.navigate(newPath)
 
   updateOnEnter: (e) =>

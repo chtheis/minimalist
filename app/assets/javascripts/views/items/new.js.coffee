@@ -11,7 +11,11 @@ class listApp.Views.ItemsNew extends Backbone.View
     @render()
 
   render: =>
-    @$el.html( @template() )
+    prefix = if location.pathname.indexOf("/minimalist") == 0 then "/minimalist" else ""
+
+    @$el.html( @template(
+      prefix: prefix
+    ) )
     @input = @$("#new-item")
 
   newAttributes: ->

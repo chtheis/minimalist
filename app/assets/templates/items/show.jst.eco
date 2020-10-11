@@ -1,9 +1,9 @@
 <button class="toggle" title="Check!" alt="Check!" tabindex="0">
-  <svg class="icon-check"><use xlink:href="/assets/icons.svg#icon-check"></use></svg>
+  <svg class="icon-check"><use xlink:href='<%= @prefix %>/assets/icons.svg#icon-check'></use></svg>
 </button>
-<svg class="move icon-more-vert"><use xlink:href="/assets/icons.svg#icon-more-vert"></use></svg>
+<svg class="move icon-more-vert"><use xlink:href='<%= @prefix %>/assets/icons.svg#icon-more-vert'></use></svg>
 <div class="view">
   <label class="label" tabindex="0"><%= @description %></label>
   <textarea class="edit chromeless-input" maxlength="255"><%= @description %></textarea>
 </div>
-<svg class="destroy icon-trash-o"><use xlink:href="/assets/icons.svg#icon-trash-o"></use></svg>
+<svg class="destroy icon-trash-o"><use xlink:href='<%= @prefix %>/assets/icons.svg#icon-trash-o'></use></svg>

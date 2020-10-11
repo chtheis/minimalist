@@ -16,9 +16,9 @@
 //= require lib/json2
 //= require lib/modernizr
 //
-//= require lib/underscore-min
+//= require lib/underscore
 //= require lib/backbone
-//= require lib/backbone.localstorage-min
+//= require lib/backbone.localStorage
 //
 //= require lib/jquery.event.move
 //= require lib/jquery.event.swipe

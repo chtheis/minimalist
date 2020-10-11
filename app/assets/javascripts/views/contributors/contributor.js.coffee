@@ -7,7 +7,10 @@ class listApp.Views.Contributor extends Backbone.View
     "click .remove-contributor" : "removeContributor"
 
   render: ->
-    $(@el).html(@template(@model.toJSON()))
+    prefix = if location.pathname.indexOf("/minimalist") == 0 then "/minimalist" else ""
+    obj = @model
+    obj.attributes.prefix = prefix
+    $(@el).html(@template(obj.toJSON()))
     return this
 
   removeContributor: =>

@@ -23,7 +23,10 @@ class listApp.Views.ListsShow extends Backbone.View
     window.user && @model.get('is_owner')
 
   render: =>
+    prefix = if location.pathname.indexOf("/minimalist") == 0 then "/minimalist" else ""
+
     $(@el).html(@template(
+      prefix: prefix
       isOwner: @isOwner()
       url: @model.urlRoot
       name: @model.get('name')
@@ -98,7 +101,10 @@ class listApp.Views.ListsShow extends Backbone.View
     @$('#stats').removeClass("editing")
 
   setUrl: =>
-    path = window.location.pathname.split("/").slice(0, -1).join("/")
+    prefix = if window.location.pathname.indexOf("/minimalist") == 0 then "/minimalist" else ""
+    offset = if window.location.pathname.indexOf("/minimalist") == 0 then 1 else 0
+
+    path = window.location.pathname.split("/").slice(offset + 0, -1).join("/")
     newPath = [path, @model.get('id')].join("/")
     listApp.router.navigate(newPath)
 

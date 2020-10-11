@@ -14,7 +14,11 @@ class listApp.Views.ListModal extends Backbone.View
     @render()
 
   render: ->
-    $(@el).html(@template())
+    prefix = if location.pathname.indexOf("/minimalist") == 0 then "/minimalist" else ""
+
+    $(@el).html(@template(
+      prefix: prefix
+    ))
     @$contributors = $(@el).find('.list-contributors')
     @renderContributors()
     $('#app').append($(@el).addClass('modal-is-shown'))

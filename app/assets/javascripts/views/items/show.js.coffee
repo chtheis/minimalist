@@ -21,7 +21,10 @@ class listApp.Views.ItemsShow extends Backbone.View
     @model.view = this
 
   render: =>
-    $(@el).html( @template(@model.toJSON()) ).linkify()
+    prefix = if location.pathname.indexOf("/minimalist") == 0 then "/minimalist" else ""
+    obj = @model
+    obj.attributes.prefix = prefix
+    $(@el).html( @template(obj.toJSON()) ).linkify()
     @renderCompleted()
     @input = @$(".edit")
     @input.autogrow({expandTolerance:0})

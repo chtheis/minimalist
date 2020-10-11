@@ -22,9 +22,12 @@ class listApp.Views.StacksShow extends Backbone.View
     @render()
 
   render: =>
+    prefix = if location.pathname.indexOf("/minimalist") == 0 then "/minimalist" else ""
+
     $(@el).prepend(@template(
+      prefix: prefix
       user: window.user
-      isUsersLists: location.pathname.indexOf('/dashboard') == 0
+      isUsersLists: location.pathname.indexOf(prefix + '/dashboard') == 0
       stack: @collection.models
       urlRoot: listApp.appUrl("lists")
     ))
@@ -75,7 +78,10 @@ class listApp.Views.ListItemShow extends Backbone.View
 
   render: =>
     isSelected = @model.collection.selectedList == @model.get('id')
+    prefix = if location.pathname.indexOf("/minimalist") == 0 then "/minimalist" else ""
+
     $(@el).html(@template(
+      prefix: prefix
       list: @model,
       isSelected: isSelected,
       urlRoot: listApp.appUrl("lists")

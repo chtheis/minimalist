@@ -3,7 +3,7 @@
   <section class="wrap">
     <header>
       <div class='logo'>
-        <svg class="logo-square icon-check"><use xlink:href="/assets/icons.svg#icon-check"></use></svg>
+        <svg class="logo-square icon-check"><use xlink:href=<%= @prefix %>/assets/icons.svg#icon-check'></use></svg>
         <h1>minimalist</h1>      
       </div>
     </header>
@@ -18,7 +18,7 @@
       <div class="actions">
         <%= link_to "Start a list", new_stack_url, :class => 'btn' %>
         <%= link_to user_google_oauth2_omniauth_authorize_path, class: 'btn btn-primary' do %>
-          <svg class="icon-google-icon"><use xlink:href="/assets/icons.svg#icon-google-icon"></use></svg>
+          <svg class="icon-google-icon"><use xlink:href=<%= @prefix %>/assets/icons.svg#icon-google-icon'></use></svg>
           <span>Sign in with Google</span>
         <% end %>
       </div>

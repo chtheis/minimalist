@@ -6,7 +6,7 @@
   <div class="modal-body">
     <ul class="list-contributors"></ul>
     <label for="email-address" class="chromeless-input-group">
-      <svg class="icon-person-add"><use xlink:href="/assets/icons.svg#icon-person-add"></use></svg>
+      <svg class="icon-person-add"><use xlink:href='<%= @prefix %>/assets/icons.svg#icon-person-add'></use></svg>
       <input id="email-address" type="text" placeholder="Enter email address" autocapitalize="off" autocorrect="off" spellcheck="false" />
     </label>
   </div>

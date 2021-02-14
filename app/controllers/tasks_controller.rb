@@ -26,7 +26,7 @@ class TasksController < ApplicationController
   def update
     task = @list.tasks.find(params[:id])
 
-    if task.update_attributes(task_params)
+    if task.update(task_params)
       render json: task
     else
       render json: task.errors, status: :unprocessable_entity

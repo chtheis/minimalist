@@ -24,7 +24,7 @@ class Api::TasksController < Api::BaseController
   end
   
   def update
-    if @task.update_attributes(task_params)
+    if @task.update(task_params)
       render json: @task
     else
       api_error(status: :unprocessable_entity, errors: @task.errors)

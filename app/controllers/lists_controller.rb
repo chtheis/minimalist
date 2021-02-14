@@ -39,7 +39,7 @@ class ListsController < ApplicationController
   end
   
   def update
-    if list.update_attributes(list_params)
+    if list.update(list_params)
       #override the default respond_with behavoir to always send back the model with update
       render json: list
     else
@@ -59,7 +59,7 @@ class ListsController < ApplicationController
 
   def list_params
     # dont `require(:list)` because we want to accept empty bodies on /create for now
-    params.permit(:name)
+    params.permit(:name, :sort_order)
   end
 
   def list

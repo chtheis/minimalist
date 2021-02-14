@@ -25,7 +25,7 @@ class Api::ListsController < Api::BaseController
   end
 
   def update
-    if @list.update_attributes(list_params)
+    if @list.update(list_params)
       render json: @list
     else
       api_error(status: :unprocessable_entity, errors: @list.errors)

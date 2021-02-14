@@ -23,7 +23,8 @@
         return fn ? this.bind('doubletap', fn) : this.trigger('doubletap');
     };
 
-    $.attrFn.doubletap = true;
+    // attrFn was removed in jQuery 1.9
+    // $.attrFn.doubletap = true;
 
     $.event.special.doubletap = {
         setup: function(data, namespaces){

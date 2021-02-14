@@ -21,6 +21,12 @@ class listApp.Views.StacksShow extends Backbone.View
     # manually render because we only ever want one sidebar
     @render()
 
+    # Use the default as handler (where to click) instead of the list item,
+    # the latter did not work, whyever
+    handler = false #'.list-item'
+    canceler = if listApp.isMobile() then '.view' else ':input,button'
+    $(@el).find('#my-lists .items').sortable({ cursor: 'move', containment: 'body', stop: @reorderCollection, handle: handler, cancel: canceler })
+
   render: =>
     prefix = if location.pathname.indexOf("/minimalist") == 0 then "/minimalist" else ""
 
@@ -45,9 +51,14 @@ class listApp.Views.StacksShow extends Backbone.View
       @addOne(item)
     )
 
+  reorderCollection: (e, ui) =>
+    _.each @collection.models, (item) =>
+      item.set({ sort_order: item.view.$el.index() })
+
   newList: (e) ->
     e.preventDefault()
-    list = @collection.create({ name: 'Untitled List' }, { wait: true, success: (model, data) ->
+    sortOrder = @collection.nextOrder()
+    list = @collection.create({ name: 'Untitled List ' + sortOrder, sort_order: @collection.nextOrder() }, { wait: true, success: (model, data) ->
       model.items.list_id = model.id
       path = listApp.appUrl('lists/' + model.id)
       listApp.router.navigate(path, {trigger: true})
@@ -75,6 +86,8 @@ class listApp.Views.ListItemShow extends Backbone.View
     @model.on("change", @render)
     @model.on('destroy', @unrender)
     @model.collection.on('selected', @render)
+
+    @model.view = this;
 
   render: =>
     isSelected = @model.collection.selectedList == @model.get('id')

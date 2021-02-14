@@ -1,5 +1,5 @@
 class ListSerializer < ActiveModel::Serializer
-  attributes :id, :name, :is_owner
+  attributes :id, :name, :is_owner, :sort_order
 
   def id
     List.hashids.encode(object.id)

@@ -7,6 +7,10 @@ class listApp.Models.List extends Backbone.Model
     # listen to sync event on model
     @bind('sync', @setListId)
 
+    # dont bind directly to @save because a second change event will fire
+    # since the change:sort_order would pass the changed attributes to the save
+    @bind("change:sort_order", @saveOrder)
+
     if !@isNew()
       @items.fetch({reset:true})
       @getUsers()
@@ -26,3 +30,6 @@ class listApp.Models.List extends Backbone.Model
     }
 
     Backbone.Model.prototype.destroy.call(this, opts)
+
+  saveOrder: () ->
+    @save()

@@ -19,9 +19,6 @@
     };
     options = $.extend(defaults, options);
     
-    // IE and Opera should never set a textarea height of 0px
-    var hCheck = !($.browser.msie || $.browser.opera);
-    
     function resize(e) {
       var $e            = $(e.target || e), // event or element
           contentLength = $e.val().length,
@@ -33,7 +30,7 @@
       if (contentLength != $e.data("autogrow-length") || elementWidth != $e.data("autogrow-width")) {
         
         // For non-IE and Opera browser, it requires setting the height to 0px to compute the right height
-        if (hCheck && (contentLength < $e.data("autogrow-length") || 
+        if (contentLength < $e.data("autogrow-length" || 
           elementWidth != $e.data("autogrow-width"))) {
           if ($.isFunction(options.heightKeeperFunction)) {
             (options.heightKeeperFunction($e)).height((options.heightKeeperFunction($e)).height());

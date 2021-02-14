@@ -11,7 +11,7 @@
 // about supported directives.
 //
 //= require lib/jquery
-//= require lib/jquery-ui.min
+//= require lib/jquery-ui
 //= require jquery_ujs
 //= require lib/json2
 //= require lib/modernizr

@@ -12,6 +12,8 @@
 //
 //= require lib/jquery
 //= require lib/jquery-ui
+//= require lib/jquery.mjs.nestedSortable.js
+//= require lib/sortable_tree.js
 //= require jquery_ujs
 //= require lib/json2
 //= require lib/modernizr
@@ -19,6 +21,7 @@
 //= require lib/underscore
 //= require lib/backbone
 //= require lib/backbone.localStorage
+//= require lib/backbone.treemodel
 //
 //= require lib/jquery.event.move
 //= require lib/jquery.event.swipe

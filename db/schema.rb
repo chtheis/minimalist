@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_13_000000) do
+ActiveRecord::Schema.define(version: 2021_02_23_191617) do
 
   create_table "identities", charset: "utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(version: 2021_02_13_000000) do
     t.datetime "deleted_at"
     t.bigint "owner_id"
     t.integer "sort_order"
+    t.string "ancestry"
+    t.index ["ancestry"], name: "index_lists_on_ancestry"
     t.index ["owner_id"], name: "fk_rails_3884c760f7"
   end
 

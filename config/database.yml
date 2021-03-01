@@ -1,7 +1,7 @@
 development:
   adapter: mysql2
   encoding: utf8
-  database: minimalist_development
+  database: <%= ENV["MINIMALIST_DATABASE_DEV"] || "minimalist_development" %>
   username: <%= ENV["MINIMALIST_DATABASE_USER"] %>
   password: <%= ENV["MINIMALIST_DATABASE_PASSWORD"] %>
   pool: 5

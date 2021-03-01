@@ -2,6 +2,7 @@ class List < ActiveRecord::Base
   HASHIDS_SALT = Rails.application.secrets.secret_key_base
 
   validates :name, presence: true
+  has_ancestry
   has_many :tasks, dependent: :destroy
 
   has_and_belongs_to_many :users, -> { uniq }
@@ -67,4 +68,9 @@ class List < ActiveRecord::Base
     end
   end
 
+  def self.json_tree(nodes)
+    nodes.map do |node, sub_nodes|
+      {:id => node.id, :name => node.name, :slug => node.slug, :sort_order => node.sort_order, :nodes => List.json_tree(sub_nodes).compress}
+    end
+  end
 end

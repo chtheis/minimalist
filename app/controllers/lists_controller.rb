@@ -1,8 +1,15 @@
 class ListsController < ApplicationController
+  include SortableTreeController::Sort
+  
+  sortable_tree 'List', {parent_method: 'parent'}
+
   respond_to :json, :html
 
   before_action :redirect_current_user, only: [:new]
   before_action :find_stack
+
+  # get items to show in tree
+  @items = Lists.all.arrange(:order => :sort_order)
 
   def new
     list = @stack.lists.new

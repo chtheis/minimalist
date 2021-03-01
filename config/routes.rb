@@ -22,6 +22,10 @@ Lists::Application.routes.draw do
   # api routes
   namespace :api do
     resources :lists, only: [:index, :create, :show, :update, :destroy] do
+      collection do
+        post :sort
+      end
+      
       member do
         delete 'leave'
       end

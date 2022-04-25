@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby "2.7.5"
+ruby "3.0.4"
 
 gem 'rails'
 gem 'dotenv-rails'
@@ -52,7 +52,7 @@ gem 'rails_12factor', group: :production
 gem 'web-console', group: :development
 
 # add authentication
-gem 'devise', github: 'heartcombo/devise', branch: 'ca-omniauth-2'
+gem 'devise'
 gem 'omniauth-google-oauth2'
 gem 'pundit'
 

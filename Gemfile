@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby "3.1.4"
+ruby "3.2.3"
 
 gem 'rails'
 gem 'dotenv-rails'

@@ -1,5 +1,5 @@
 class Api::BaseController < ActionController::Base
-  include Pundit::Authorizaation
+  include Pundit::Authorization
 
   # @see https://github.com/rails-api/active_model_serializers/issues/624
   serialization_scope :view_context

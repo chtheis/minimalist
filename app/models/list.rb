@@ -1,5 +1,5 @@
 class List < ActiveRecord::Base
-  HASHIDS_SALT = Rails.application.secrets.secret_key_base
+  HASHIDS_SALT = Rails.application.credentials.secret_key_base
 
   validates :name, presence: true
   has_many :tasks, dependent: :destroy
